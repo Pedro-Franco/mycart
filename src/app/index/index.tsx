@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, FlatList, TouchableOpacity, Modal } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { router } from "expo-router";
 
 import { styles } from "./styles";
 import { colors } from "@/styles/colors";
@@ -38,8 +39,8 @@ export default function Index() {
       <View style={styles.contentContainer}>
         <View style={styles.contentHeader}>
           <Text style={styles.contentTitle}>Lista de compras</Text>
-          <TouchableOpacity>
-            <MaterialIcons name="add-circle" size={24}  color={colors.gray[100]} />
+          <TouchableOpacity onPress={() => router.navigate('./addProducts')}>
+            <MaterialIcons name="add-circle" size={24}  color={colors.pink[800]} />
           </TouchableOpacity>
         </View>
 
@@ -69,7 +70,7 @@ export default function Index() {
         <Text style={styles.footerText}>R$ 100,00</Text>
       </View>
 
-      <StatusBar style="light"/>
+      <StatusBar style="auto"/>
     </SafeAreaView>
   )
 }

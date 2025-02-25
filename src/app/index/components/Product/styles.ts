@@ -8,17 +8,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     borderRadius: 8,
-    backgroundColor: colors.purple[500],
+    backgroundColor: colors.pink[700],
   },
   itemName: {
     color: colors.gray[100],
     fontSize: 16,
-    fontWeight: '400',
+    fontWeight: '600',
   },
   itemSpan: {
     color: colors.gray[100],
     fontSize: 14,
-    fontWeight: '400',
+    fontWeight: '600',
     textAlign: 'right',
   }
 })

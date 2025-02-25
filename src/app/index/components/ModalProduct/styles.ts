@@ -9,11 +9,11 @@ export const styles = StyleSheet.create({
     height: 225,
     borderTopLeftRadius: 32,
     borderTopRightRadius: 32,
-    backgroundColor: colors.purple[950],
+    backgroundColor: colors.pink[800],
     borderTopWidth: 1,
     borderLeftWidth: 1,
     borderRightWidth: 1,
-    borderColor: colors.purple[300],
+    borderColor: colors.pink[300],
   },
   modalHeader: {
     flexDirection: 'row',
@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     paddingTop: 24,
   },
   modalFooterButton: {
-    backgroundColor: colors.red[500],
+    backgroundColor: colors.pink[700],
     padding: 12,
     borderRadius: 8,
   },
