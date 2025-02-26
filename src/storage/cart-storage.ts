@@ -27,4 +27,15 @@ async function _postProduct(newProduct: CartStorage) {
   }
 }
 
+async function _removeProduct(id: string) {
+  try {
+    const storage = await _getProduct();
+    const updated = storage.filter((product) => product.id !== id);
+
+    await AsyncStorage.setItem(CART_STORAGE_KEY, JSON.stringify(updated));
+  } catch (error) {
+    throw error
+  }
+}
+
 export const cartStorage = { _getProduct, _postProduct };
