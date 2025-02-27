@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     borderRadius: 8,
-    backgroundColor: colors.pink[700],
+    backgroundColor: colors.purple[700],
   },
   itemName: {
     color: colors.gray[100],

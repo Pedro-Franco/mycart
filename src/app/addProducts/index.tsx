@@ -53,7 +53,7 @@ export default function AddProducts() {
           <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
             <Text style={styles.containerTitle}>Adicionar produtos</Text>
             <TouchableOpacity onPress={() => router.back()}>
-              <MaterialIcons name="close" size={32} color={colors.pink[800]} />
+              <MaterialIcons name="close" size={32} color={colors.purple[800]} />
             </TouchableOpacity>
           </View>
           <Text style={styles.containerSpan}>Aqui você pode adicionar produtos ao seu carrinho</Text>
@@ -63,7 +63,7 @@ export default function AddProducts() {
           <Text style={styles.label}>Produto</Text>
           <TextInput
             placeholder="Maçã"
-            placeholderTextColor={colors.pink[700]}
+            placeholderTextColor={colors.purple[700]}
             onChangeText={setProduct}
             value={product}
             style={styles.input}
@@ -72,7 +72,7 @@ export default function AddProducts() {
           <Text style={styles.label}>Preço unitário</Text>
           <TextInputMask 
             placeholder="R$0,00"
-            placeholderTextColor={colors.pink[700]}
+            placeholderTextColor={colors.purple[700]}
             type='money'
             options={{
               precision: 2,
@@ -90,7 +90,7 @@ export default function AddProducts() {
           <Text style={styles.label}>Quantidade</Text>
           <TextInput
             placeholder="10"
-            placeholderTextColor={colors.pink[700]}
+            placeholderTextColor={colors.purple[700]}
             onChangeText={setQuantity}
             value={quantity}
             style={styles.input}

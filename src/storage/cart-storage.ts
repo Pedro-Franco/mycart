@@ -38,4 +38,4 @@ async function _removeProduct(id: string) {
   }
 }
 
-export const cartStorage = { _getProduct, _postProduct };
+export const cartStorage = { _getProduct, _postProduct, _removeProduct };

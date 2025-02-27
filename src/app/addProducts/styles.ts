@@ -13,11 +13,11 @@ export const styles = StyleSheet.create({
   containerTitle: {
     fontSize: 24,
     fontWeight: 600,
-    color: colors.pink[800],
+    color: colors.purple[800],
   },
   containerSpan: {
     fontSize: 14,
-    color: colors.pink[800],
+    color: colors.purple[800],
   },
   containerContent: {
     flex: 1,
@@ -26,16 +26,16 @@ export const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     fontWeight: 600,
-    color: colors.pink[800],
+    color: colors.purple[800],
     marginBottom: 8,
   },
   input: {
     padding: 14,
     borderWidth: 2,
-    borderColor: colors.pink[700],
+    borderColor: colors.purple[700],
     borderRadius: 8,
     marginBottom: 12,
-    color: colors.pink[800],
+    color: colors.purple[800],
   },
   button: {
     position: 'absolute',
@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
     right: 24,
     padding: 14,
     borderRadius: 12,
-    backgroundColor: colors.pink[800],
+    backgroundColor: colors.purple[800],
   },
   buttonText: {
     color: colors.gray[100],

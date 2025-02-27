@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   cartIcon: {
     textAlign: 'center',
     fontSize: 48,
-    color: colors.pink[800],
+    color: colors.purple[700],
   },
   contentContainer: {
     marginVertical: 24,
@@ -20,12 +20,12 @@ export const styles = StyleSheet.create({
     alignContent: 'center',
     borderBottomWidth: 1,
     paddingHorizontal: 24,
-    borderColor: colors.pink[800],
+    borderColor: colors.purple[800],
   },
   contentTitle: {
     fontSize: 18,
     paddingBottom: 16,
-    color: colors.pink[800],
+    color: colors.purple[800],
   },
   listContainer: {
     gap: 16,
@@ -43,14 +43,14 @@ export const styles = StyleSheet.create({
     right: 24,
     paddingVertical: 18,
     paddingHorizontal: 18,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 100,
-    backgroundColor: colors.pink[800],
-    borderColor: colors.pink[300],
+    backgroundColor: colors.purple[800],
+    borderColor: colors.purple[300],
   },
   footerText: {
     color: colors.gray[100],
     fontSize: 18,
-    fontWeight: '600',
+    fontWeight: '700',
   },
 })
