@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
   cartIcon: {
     textAlign: 'center',
-    fontSize: 48,
+    fontSize: 32,
     color: colors.purple[700],
   },
   contentContainer: {
@@ -32,6 +32,22 @@ export const styles = StyleSheet.create({
     marginTop: 16,
     paddingBottom: 200,
     paddingHorizontal: 24,
+  },
+  emptyContent: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 200,
+    paddingHorizontal: 24,
+  },
+  contentSpan: {
+    fontSize: 16,
+    color: colors.gray[400],
+    textAlign: 'center',
+  },
+  iconTextContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
   },
   footerContainer: {
     position: 'absolute',

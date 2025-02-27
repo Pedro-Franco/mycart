@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     color: colors.purple[800],
   },
   containerSpan: {
-    fontSize: 14,
+    fontSize: 16,
     color: colors.purple[800],
   },
   containerContent: {
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24
   },
   label: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 600,
     color: colors.purple[800],
     marginBottom: 8,

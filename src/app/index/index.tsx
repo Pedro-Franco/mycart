@@ -16,7 +16,8 @@ export default function Index() {
   const [products, setProducts] = useState<CartStorage[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<CartStorage>({} as CartStorage);
   const [modalVisible, setModalVisible] = useState(false);
-  const [total, setTotal] = useState<number>();
+  const [total, setTotal] = useState<number>(0);
+  const [formattedTotal, setFormattedTotal] = useState<string>("R$ 0,00");
 
   async function getProducts() {
     try {
@@ -33,12 +34,18 @@ export default function Index() {
       const response = await cartStorage._getProduct();
 
       const total = response.reduce((acc, item) => {
-        const price = parseFloat(item.price.replace("R$", "").replace(",", ".").trim()) ?? 0;
+        const price = parseFloat(item.price.replace("R$", "").replace(/\./g, "").replace(",", ".").trim()) || 0;
         const quantity = parseFloat(item.quantity )|| 1;
         return acc + (price * quantity);
       }, 0)
 
+      const formatted = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(total);
+
       setTotal(total);
+      setFormattedTotal(formatted);
     } catch (error) {
       Alert.alert("Erro", "Não foi possível calcular o valor total");
     }
@@ -75,9 +82,9 @@ export default function Index() {
 
   useFocusEffect(
     useCallback(() => {
-      getProducts()
-      totalPrice()
-    }, [])
+      getProducts();
+      totalPrice();
+    }, [products])
   )
 
   return(
@@ -92,20 +99,31 @@ export default function Index() {
           </TouchableOpacity>
         </View>
 
-        <FlatList
-          data={products}
-          keyExtractor={(item)=> item.id}
-          renderItem={({ item }) => (
-            <Products
-              product={item.product}
-              quantity={item.quantity}
-              price={item.price}
-              onPress={() => handleSelectedProduct(item)}
-            />
-          )}
-          contentContainerStyle={styles.listContainer}
-          showsVerticalScrollIndicator={false}
-        />
+        {
+        products.length === 0 ?
+          <View style={styles.emptyContent}>
+            <Text style={styles.contentSpan}>Sem produtos no carrinho.</Text>
+            <View style={styles.iconTextContainer}>
+              <Text style={styles.contentSpan}>Adicione novos produtos clicando em</Text>
+              <MaterialIcons name="add-circle-outline" size={24} color={colors.gray[400]} />
+            </View>
+          </View>
+        :
+          <FlatList
+            data={products}
+            keyExtractor={(item)=> item.id}
+            renderItem={({ item }) => (
+              <Products
+                product={item.product}
+                quantity={item.quantity}
+                price={item.price}
+                onPress={() => handleSelectedProduct(item)}
+              />
+            )}
+            contentContainerStyle={styles.listContainer}
+            showsVerticalScrollIndicator={false}
+          />
+        }
       </View>
 
       <ModalProduct
@@ -119,7 +137,7 @@ export default function Index() {
 
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>VALOR TOTAL</Text>
-        <Text style={styles.footerText}>{"R$" + total?.toFixed(2).replace(".", ",")}</Text>
+        <Text style={styles.footerText}>{formattedTotal}</Text>
       </View>
 
       <StatusBar style="auto" backgroundColor={colors.gray[100]} />
