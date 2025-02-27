@@ -1,12 +1,14 @@
 import { Stack } from "expo-router";
 
-import { colors } from "./styles/colors";
+import { colors } from "../styles/colors";
 
 export default function Layout() {
+  const backgroundColor = colors.gray[100]
+
   return <Stack 
     screenOptions={{
       headerShown: false,
-      contentStyle: {backgroundColor: colors.pink[800]}
+      contentStyle: {backgroundColor},
     }}
   />
 }
