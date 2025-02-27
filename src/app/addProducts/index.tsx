@@ -50,12 +50,10 @@ export default function AddProducts() {
     >
       <View style={styles.container}>
         <View style={styles.containerHeader}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-            <Text style={styles.containerTitle}>Adicionar produtos</Text>
-            <TouchableOpacity onPress={() => router.back()}>
-              <MaterialIcons name="close" size={32} color={colors.purple[800]} />
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity onPress={() => router.back()}>
+            <MaterialIcons name="close" size={32} color={colors.purple[800]} />
+          </TouchableOpacity>
+          <Text style={styles.containerTitle}>Adicionar produtos</Text>
           <Text style={styles.containerSpan}>Aqui você pode adicionar produtos ao seu carrinho</Text>
         </View>
 

@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.gray[100],
   },
   containerHeader: {
+    marginTop: 12,
     padding: 24,
     gap: 12,
   },
