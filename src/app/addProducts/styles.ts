@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   label: {
     fontSize: 18,
     fontWeight: 600,
-    color: colors.purple[800],
+    color: colors.purple[700],
     marginBottom: 8,
   },
   input: {

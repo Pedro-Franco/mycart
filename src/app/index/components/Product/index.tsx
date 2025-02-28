@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text, Vibration } from "react-native";
 
 import { styles } from "./styles";
 import { colors } from "@/styles/colors";
@@ -23,7 +23,7 @@ export function Products({ product, quantity, price, onPress }: Props) {
       onLongPress={onPress}
       delayLongPress={300}
     >
-      <View style={{flexDirection: "row", alignItems: "center", gap: 6}}>
+      <View style={{flexDirection: "row", alignItems: "center", gap: 8}}>
         <MaterialIcons 
           name={checked ? "check-box" : "check-box-outline-blank"}
           size={24} 

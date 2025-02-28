@@ -94,9 +94,16 @@ export default function Index() {
       <View style={styles.contentContainer}>
         <View style={styles.contentHeader}>
           <Text style={styles.contentTitle}>Lista de compras</Text>
-          <TouchableOpacity onPress={() => router.navigate('./addProducts')}>
-            <MaterialIcons name="add-circle-outline" size={32}  color={colors.purple[700]} />
-          </TouchableOpacity>
+
+          <View style={{flexDirection: "row", alignItems: "center", gap: 12}}>
+            <TouchableOpacity onPress={() => router.navigate('./history')}>
+              <MaterialIcons name="history" size={32}  color={colors.purple[700]} />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => router.navigate('./addProducts')}>
+              <MaterialIcons name="add-circle-outline" size={32}  color={colors.purple[700]} />
+            </TouchableOpacity>
+          </View>
         </View>
 
         {
@@ -136,13 +143,21 @@ export default function Index() {
       />
 
       <View style={styles.footerContainer}>
-        <TouchableOpacity activeOpacity={0.8} style={styles.footerRemove}>
+        <TouchableOpacity 
+          activeOpacity={0.8} 
+          style={styles.footerRemove}
+          onPress={() => console.log("Lista excluída com sucesso!")}
+        >
           <MaterialIcons name="delete-outline" size={32} color={colors.gray[100]} />
         </TouchableOpacity>
 
         <Text style={styles.footerTotal}>{formattedTotal}</Text>
 
-        <TouchableOpacity activeOpacity={0.8} style={styles.footerSave}>
+        <TouchableOpacity 
+          activeOpacity={0.8} 
+          style={styles.footerSave}
+          onPress={() => console.log("Lista salva com sucesso!")}
+        >
           <MaterialIcons name="save-alt" size={32} color={colors.gray[100]} />
         </TouchableOpacity>
       </View>
