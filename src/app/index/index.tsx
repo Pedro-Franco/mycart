@@ -95,7 +95,7 @@ export default function Index() {
         <View style={styles.contentHeader}>
           <Text style={styles.contentTitle}>Lista de compras</Text>
           <TouchableOpacity onPress={() => router.navigate('./addProducts')}>
-            <MaterialIcons name="add-circle-outline" size={24}  color={colors.purple[700]} />
+            <MaterialIcons name="add-circle-outline" size={32}  color={colors.purple[700]} />
           </TouchableOpacity>
         </View>
 
@@ -136,11 +136,18 @@ export default function Index() {
       />
 
       <View style={styles.footerContainer}>
-        <Text style={styles.footerText}>VALOR TOTAL</Text>
-        <Text style={styles.footerText}>{formattedTotal}</Text>
+        <TouchableOpacity activeOpacity={0.8} style={styles.footerRemove}>
+          <MaterialIcons name="delete-outline" size={32} color={colors.gray[100]} />
+        </TouchableOpacity>
+
+        <Text style={styles.footerTotal}>{formattedTotal}</Text>
+
+        <TouchableOpacity activeOpacity={0.8} style={styles.footerSave}>
+          <MaterialIcons name="save-alt" size={32} color={colors.gray[100]} />
+        </TouchableOpacity>
       </View>
 
-      <StatusBar style="auto" backgroundColor={colors.gray[100]} />
+      <StatusBar style="auto" />
     </SafeAreaView>
   )
 }
