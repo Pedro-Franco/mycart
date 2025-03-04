@@ -1,6 +1,7 @@
-import { View, TouchableOpacity, Text, Vibration } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
 import { styles } from "./styles";
+
 type Props = {
   date: string;
   price: string;
@@ -10,7 +11,7 @@ type Props = {
 export function Purchases({ date, price, onPress }: Props) {
   return(
     <TouchableOpacity 
-      activeOpacity={0.8} 
+      activeOpacity={0.5} 
       style={styles.itemContainer} 
       onPress={onPress}
     >
